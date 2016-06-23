@@ -48,6 +48,7 @@
  '(custom-safe-themes
    (quote
     ("a802c77b818597cc90e10d56e5b66945c57776f036482a033866f5f506257bca" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
+ '(org-agenda-files (quote ("~/hsk/hsk.org")))
  '(org-babel-load-languages (quote ((C . t)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -71,3 +72,11 @@
 ;; These two lines you really need.
 (setq sml/theme 'powerline)
 (sml/setup)
+
+;; Set the agenda key binding
+(global-set-key (kbd "<f2>") 'org-agenda)
+
+(autoload 'ledger-mode "ledger-mode" "A major mode for Ledger" t)
+(add-to-list 'auto-mode-alist '("\\.ledger$" . ledger-mode))
+
+(global-set-key (kbd "<f2>") 'org-agenda)
