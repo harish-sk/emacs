@@ -49,7 +49,18 @@
    (quote
     ("a802c77b818597cc90e10d56e5b66945c57776f036482a033866f5f506257bca" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
  '(org-agenda-files (quote ("~/hsk/hsk.org")))
- '(org-babel-load-languages (quote ((C . t)))))
+ '(org-babel-load-languages (quote ((C . t))))
+ '(org-capture-templates
+   (quote
+    (("t" "Add TODO" entry
+      (file+headline "~/hsk/hsk.org" "Capture")
+      "~/hsk/tpl-todo.txt")
+     ("b" "Add Book" entry
+      (file+headline "~/hsk/hsk.org" "Capture")
+      (file "~/hsk/tpl-book.txt")))))
+ '(org-log-done (quote time))
+ '(org-log-into-drawer t)
+ '(org-log-reschedule (quote note)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -75,8 +86,15 @@
 
 ;; Set the agenda key binding
 (global-set-key (kbd "<f2>") 'org-agenda)
+(global-set-key (kbd "<f6>") 'org-capture)
 
 (autoload 'ledger-mode "ledger-mode" "A major mode for Ledger" t)
 (add-to-list 'auto-mode-alist '("\\.ledger$" . ledger-mode))
 
 (global-set-key (kbd "<f2>") 'org-agenda)
+
+;; save session
+(desktop-save-mode 1)
+
+;; truncate lines
+(set-default 'truncate-lines t)
