@@ -73,8 +73,8 @@
 (yas-global-mode 1)
 
 ;; org-bullet
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+;;(require 'org-bullets)
+;;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;; Smart mode line
 ;; These two lines are just examples
@@ -98,3 +98,8 @@
 
 ;; truncate lines
 (set-default 'truncate-lines t)
+
+(org-babel-do-load-languages
+'org-babel-load-languages
+'((scheme . t)
+ (emacs-lisp . t)))
